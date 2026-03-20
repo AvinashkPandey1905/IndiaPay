@@ -1,0 +1,329 @@
+.cards-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .cards-layout {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: flex-start;
+  }
+}
+
+.virtual-card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.virtual-card-v2 {
+  aspect-ratio: 1.58/1;
+}
+
+.flip-card-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  aspect-ratio: 1.58/1;
+  transition: transform 0.1s ease-out;
+  border-radius: var(--radius-xl);
+  position: relative;
+  z-index: 5;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.flip-card-container.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  color: white;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.magnetic-strip {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #111;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.cvv-strip {
+  background: #e2e8f0;
+  color: #0f172a;
+  width: 80%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.card-number-large {
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  font-family: monospace;
+  margin: 16px 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.card-footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-footer p {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.card-footer .card-val {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 1;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top .type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.card-num {
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+.details-row {
+  display: flex;
+  gap: 32px;
+}
+
+.detail span {
+  font-size: 0.6rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.detail p {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.holder {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.network-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.05) 45%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 55%, transparent 60%);
+  pointer-events: none;
+}
+
+.card-quick-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-pill {
+  flex: 1;
+  padding: 16px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.action-pill svg {
+  color: var(--accent-light);
+  width: 20px;
+  height: 20px;
+}
+
+.action-pill:hover { 
+  background: rgba(255, 255, 255, 0.08); 
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(94, 80, 250, 0.2);
+}
+
+.action-pill.active { 
+  color: var(--danger); 
+  border-color: rgba(239, 68, 68, 0.4); 
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.action-pill.active svg {
+  color: var(--danger);
+}
+
+/* Settings Toggles and Layout */
+.pref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pref-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
+.pref-item:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-light);
+}
+
+.pref-info p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.pref-info span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  background: var(--border-light);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toggle-switch.active { background: var(--success); }
+.toggle-switch.active::after { left: 24px; }

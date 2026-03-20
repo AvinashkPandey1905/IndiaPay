@@ -1,0 +1,19 @@
+.skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    var(--surface-hover) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    var(--surface-hover) 75%
+  );
+  background-size: 400% 100%;
+  animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

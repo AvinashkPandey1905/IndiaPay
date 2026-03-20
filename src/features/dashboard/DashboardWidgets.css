@@ -1,0 +1,205 @@
+.widget-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.widget-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.widget-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 14px;
+}
+
+.widget-info {
+  flex: 1;
+}
+
+.widget-info h4 { font-size: 0.9rem; margin-bottom: 2px; }
+.widget-info p { font-size: 0.75rem; }
+
+.widget-amount {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Utilities Inline Engine */
+.add-biller-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  background: rgba(255,255,255,0.02);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.add-biller-form input {
+  flex: 1;
+  width: 100%;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.add-biller-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.widget-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.pay-btn {
+  background: rgba(94, 80, 250, 0.15);
+  color: var(--accent-light);
+  border: 1px solid rgba(94, 80, 250, 0.3);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pay-btn:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.scroll-hide {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.scroll-hide::-webkit-scrollbar {
+  width: 4px;
+}
+.scroll-hide::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* Score Card */
+.score-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.score-header h3 { font-size: 1.1rem; }
+.score-header p { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.score-ring-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 16px auto 0;
+}
+
+.score-ring { width: 100%; height: 100%; }
+
+.ring-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.05);
+  stroke-width: 3;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: var(--success);
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: fillScore 1.5s ease-out forwards;
+}
+
+@keyframes fillScore {
+  from { stroke-dasharray: 0, 100; }
+}
+
+.score-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.score-value h2 { font-size: 1.8rem; letter-spacing: 1px; color: var(--text-main); }
+.score-value p { font-size: 0.7rem; color: var(--success); font-weight: 600; margin-top: -4px;}
+
+/* Market */
+.market-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.market-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.market-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.m-title {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.market-head span.text-success, .market-head span.text-danger {
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.market-item h2 {
+  font-size: 1.1rem;
+}

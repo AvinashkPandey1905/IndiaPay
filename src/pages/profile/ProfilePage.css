@@ -1,0 +1,203 @@
+.profile-v2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.profile-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .profile-hero {
+    flex-direction: row;
+    text-align: left;
+    padding: 0 40px;
+  }
+}
+
+.avatar-large {
+  width: 120px;
+  height: 120px;
+  background: var(--surface);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.avatar-large span {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.user-meta h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.upi-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .upi-badge { margin: 0 auto 12px auto; }
+}
+
+.copy-btn {
+  color: var(--accent-light);
+  cursor: pointer;
+}
+
+.kyc-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.kyc-indicator.verified { color: var(--success); }
+
+/* QR Card */
+.qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--bg-secondary) 100%);
+}
+
+.qr-container {
+  padding: 20px;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.qr-box-inner {
+  width: 160px;
+  height: 160px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.qr-pattern {
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(var(--bg-primary) 2px, transparent 2px);
+  background-size: 8px 8px;
+  opacity: 0.8;
+}
+
+.qr-label {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.qr-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-btn-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-light);
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Settings Stack */
+.settings-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
+}
+
+.item-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+  border: 1px solid var(--border);
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.item-value {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.chevron {
+  opacity: 0.3;
+}
+
+/* Logout */
+.danger-btn {
+  margin-top: 20px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--danger);
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.danger-btn:hover {
+  background: var(--danger);
+  color: white;
+}

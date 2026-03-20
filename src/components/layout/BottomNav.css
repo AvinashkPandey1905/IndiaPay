@@ -1,0 +1,65 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(12, 15, 22, 0.85);
+  backdrop-filter: var(--glass);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid var(--border);
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: var(--transition);
+  opacity: 0.7;
+}
+
+.nav-link.active {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.nav-link.active svg {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.scan-fab {
+  margin-top: -48px;
+}
+
+.scan-icon-container {
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, var(--accent) 0%, #312e81 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px var(--accent-glow);
+  border: 6px solid var(--bg-primary);
+  transition: var(--transition);
+}
+
+.scan-fab:hover .scan-icon-container {
+  transform: scale(1.1) rotate(5deg);
+}

@@ -1,0 +1,182 @@
+/* IndiaPay Ultra-Modern Design System - v2.0 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import './styles/animations.css';
+
+:root {
+  /* Ultra Premium Dark Theme (Linear/Vercel Inspired) */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --surface: #0f0f0f;
+  --surface-hover: #1a1a1a;
+  
+  /* Brand Colors - High-Trust Fintech */
+  --accent: #5e50fa;
+  --accent-light: #8b80fc;
+  --accent-glow: rgba(94, 80, 250, 0.5);
+  
+  --gold: #f59e0b;
+  --gold-glow: rgba(245, 158, 11, 0.4);
+  
+  --success: #10b981;
+  --danger: #f8312f;
+  --warning: #f59e0b;
+  
+  /* Text */
+  --text-main: #ffffff;
+  --text-dim: #a1a1aa;
+  --text-muted: #71717a;
+  
+  /* Utilities */
+  --border: rgba(255, 255, 255, 0.12);
+  --border-light: rgba(255, 255, 255, 0.05);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.8);
+  --glass: blur(24px) saturate(180%);
+  
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --space-unit: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 50% 10%, rgba(94, 80, 250, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Components */
+.glass-pane {
+  background: rgba(20, 24, 34, 0.8);
+  backdrop-filter: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.premium-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.premium-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Grid/Flex Utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-header h2 {
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, white, var(--text-dim));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes shimmmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(to right, var(--surface) 8%, var(--surface-hover) 18%, var(--surface) 33%);
+  background-size: 800px 104px;
+  animation: shimmmer 2s linear infinite forwards;
+}

@@ -1,0 +1,50 @@
+.wallet-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  border-color: var(--accent);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.feature-text p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.feature-item .arrow {
+  margin-left: auto;
+  color: var(--text-muted);
+}
