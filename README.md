@@ -28,4 +28,4 @@ npm run build
 ```
 
 ---
-*Built to simulate leading Enterprise software metrics (4-YoE SDE levels).*
+*Built to simulate leading Enterprise software metrics.*
